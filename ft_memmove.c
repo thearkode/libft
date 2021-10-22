@@ -1,4 +1,5 @@
-#include <stdio.h>
+/*#include <stdio.h>
+
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char *modsrc;
@@ -14,6 +15,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+*/
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
 	int i = 0;
@@ -35,12 +37,13 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 		return (ft_memcpy(dest, src, n));
 	return (dest);
 }
-
+/*
 int main(void)
 {
 	char source[256] = "33333";
 	char dest[256] = "ola";
 	printf("%s", ft_memmove(dest, source, 5));
 }
+*/
 
 
