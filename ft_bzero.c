@@ -1,23 +1,8 @@
-#include <stdio.h>
-// declarar size_t no header
-
-void *ft_memset(void *str, int c, size_t len)
-{
-	char *temp;
-
-	temp = (char *)str;
-	while (len != 0)
-	{
-		*temp++ = c;
-		len--;
-	}
-	return (str);
-	
-}
+#include "libft.h"
 
 void ft_bzero(void *str, size_t n)
 {
-		ft_memset(str, 0, n);
+	ft_memset(str, 0, n);
 }
 /*
 int main(void)

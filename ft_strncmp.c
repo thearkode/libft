@@ -1,4 +1,4 @@
-//#include <stdio.h>
+#include "libft.h"
 
 int ft_strncmp(const char *str, const char *s, size_t n)
 {
@@ -7,7 +7,7 @@ int ft_strncmp(const char *str, const char *s, size_t n)
 	while ((str[i] || s[i]) && i < n)
 	{
 		if (str[i] != s[i])
-			return (str[i] - s[i]);
+			return ((unsigned char)str[i] - (unsigned char)s[i]);
 		i++;
 	}
 	return (0);

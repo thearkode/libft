@@ -1,25 +1,16 @@
-//#include <stdio.h>
+#include "libft.h"
 
 char *ft_strrchr(const char *str, int c)
 {
-	int i;
-	i = 0;
-	char *saved = NULL;
-	if (c == '\0')
-		return (saved);
-	while (str[i])
+	const char *start;
+
+	start = str;
+	str += ft_strlen(str);
+	while (str >= start)
 	{
-		if (str[i] == c)
-			saved = ((char *)str + i);	
-		i++;
+		if (*str == c)
+			return ((char *)str);
+		str--;
 	}
-	return saved;
+	return (NULL);
 }
-/*
-int main(void)
-{
-	char *go = "anaaaaaaa krum krum";
-	int c = '0';
-	printf("%s",ft_strrchr(go, c));
-}
-*/

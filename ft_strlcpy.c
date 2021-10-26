@@ -1,37 +1,18 @@
-/*#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlen(char const *str)
+size_t ft_strlcpy(char *dest, const char *src, size_t maxlen)
 {
-	size_t i;
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-	
-}
-*/
-size_t ft_strlcpy(char *dest, const char *src, size_t destlen)
-{
-	unsigned long i;
-	i = 0;
-	if (!(src) && !(dest))
-		return (0);
-	while (src[i] && i + 1 < destlen)
+	size_t srclen;
+
+	srclen = ft_strlen(src);
+	if (maxlen == 0)
+		return (srclen);
+	if (srclen + 1 < maxlen)
+		ft_memcpy(dest, src, (srclen + 1));
+	else
 	{
-		dest[i] = src[i];
-		i++;
+		ft_memcpy(dest, src, (maxlen - 1));
+		dest[maxlen - 1] = '\0';
 	}
-	i = i + 1;
-	dest[i] = '\0';
-	//printf("%s\n", src);
-	//printf("%s\n", dest);
-	return (ft_strlen(src));
+	return (srclen);
 }
-/*
-int main(void)
-{
-	char source[256] = "3";
-	char dest[256] = "ola";
-	printf("%zu", ft_strlcpy(dest, source, 3));
-}
-*/

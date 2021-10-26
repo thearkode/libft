@@ -1,5 +1,4 @@
-#include <stdio.h>
-// declarar size_t no header
+#include "libft.h"
 
 void *ft_memset(void *str, int c, size_t len)
 {
@@ -12,16 +11,4 @@ void *ft_memset(void *str, int c, size_t len)
 		len--;
 	}
 	return (str);
-	
 }
-/*
-int main(void)
-{
-	char a[256] = "ana";
-	size_t len = 2;
-	char k = '$';
-	printf("%s\n", ft_memset(a, k, len));
-}
-*/
-
-

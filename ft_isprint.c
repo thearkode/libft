@@ -1,13 +1,9 @@
-#include <stdio.h>
+#include "libft.h"
 
-int ft_isascii(int c)
+int ft_isprint(int c)
 {
-	return (c >= 32 && c <= 126 ? 1 : 0);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
-
-int main(void)
-{
-	int a = ' ';
-	printf("%d", ft_isascii(a));
-}
-

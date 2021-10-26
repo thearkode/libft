@@ -1,24 +1,14 @@
-//#include <stdio.h>
+#include "libft.h"
 
 char *ft_strchr(const char *str, int c)
 {
-	int i;
-	i = 0;
-	if (c == '\0')
-		return ((char *)str);
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == c)
-			return ((char *)str + i);
-		i++;
+		if (*str == (char)c)
+			return ((char *)str);
+		str++;
 	}
+	if ((char)c == '\0')
+		return ((char *)str);
 	return 0;
 }
-/*
-int main(void)
-{
-	char *go = "anaaaaaaa krum";
-	int c = '';
-	printf("%s",ft_strchr(go, c));
-}
-*/
