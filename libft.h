@@ -6,6 +6,12 @@
 #include <unistd.h>
 #include <fcntl.h> //file controle (open, read, etc)
 
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+
 int ft_isalnum(int c);
 int ft_isalpha(int c);
 int ft_isascii(int c);
@@ -37,5 +43,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+t_list	*ft_lstnew(void *content);
 
 #endif
