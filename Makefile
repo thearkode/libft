@@ -22,7 +22,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strjoin.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c ft_strmapi.c 
 
-SRC_B = ft_lstnew.c 
+SRC_B = ft_lstnew.c  ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 OBJ_DIR = obj/
@@ -40,6 +40,10 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: %.c
 	@mkdir -p obj
+	$(CC) $(CFLAGS) -I $(HEADERS) -c $< -o $@
+
+$(OBJ_B_DIR)%.o: %.c
+	@mkdir -p obj_b
 	$(CC) $(CFLAGS) -I $(HEADERS) -c $< -o $@
 
 clean:

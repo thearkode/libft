@@ -6,16 +6,16 @@
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:32:05 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/10/27 19:34:43 by apaula-r         ###   ########.fr       */
+/*   Updated: 2021/10/28 23:09:13 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*selected;
-	size_t len;
+	size_t	len;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -27,7 +27,7 @@ char *ft_strtrim(char const *s1, char const *set)
 			len--;
 	selected = malloc(sizeof(char) * len + 2);
 	if (!selected)
-		return NULL;
+		return (NULL);
 	ft_strlcpy(selected, s1, len + 2);
 	return (selected);
 }
