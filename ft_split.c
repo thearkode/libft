@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 16:55:48 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/10/29 19:44:38 by apaula-r         ###   ########.fr       */
+/*   Created: 2021/10/29 20:13:45 by apaula-r          #+#    #+#             */
+/*   Updated: 2021/10/29 20:23:10 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+char	**ft_split(const char *str, char c)
 {
-	t_list	*new_list;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
+	char			**tab;
 
-	if (!lst || !f)
+	tab = (char **)malloc(sizeof(char *) * (ft_wrdcnt(str, c)) + 1);
+	if (!str || !tab)
 		return (NULL);
-	new_list = ft_lstnew(f(lst->content));
-	if (del)
-		ft_lstdelone(lst, del);
-	lst = lst->next;
-	while (lst)
+	i = 0;
+	k = 0;
+	while (str[i])
 	{
-		ft_lstadd_back(&new_list, ft_lstnew(f(lst->content)));
-		if (del)
-			ft_lstdelone(lst, del);
-		lst = lst->next;
+		while (str[i] == c)
+			i++;
+		j = i;
+		while (str[i] && str[i] != c)
+			i++;
+		if (i > j)
+		{
+			tab[k] = ft_strndup(str + j, i - j);
+			k++;
+		}
 	}
-	return (new_list);
+	tab[k] = NULL;
+	return (tab);
 }
