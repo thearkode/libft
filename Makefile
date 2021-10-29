@@ -22,16 +22,17 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strjoin.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c ft_strmapi.c 
 
-SRC_B = ft_lstnew.c  ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+SRC_B = ft_lstnew.c  ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c  ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 OBJ_DIR = obj/
-OBJ_B = $(addprefix $(OBJ_B_DIR),$(SRC_B:.c=.o))
+OBJ_B = $(addprefix $(OBJ_B_DIR),$(SRC_B:.c=.o)) #obj_b/ft_lstnew.o
 OBJ_B_DIR = obj_b/
 
 all: $(NAME)
 
-bonus: $(NAME) ${OBJ_B}
+bonus: ${OBJ_B}
 	@ar rcs ${NAME} $(OBJ_B)
 
 $(NAME): $(OBJ)
