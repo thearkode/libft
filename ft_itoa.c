@@ -6,7 +6,7 @@
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 18:48:34 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/10/29 20:20:36 by apaula-r         ###   ########.fr       */
+/*   Updated: 2021/11/01 15:55:56 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 		number[len--] = n % 10 + 48;
 		n /= 10;
 		if (n == 0)
-			break;
+			break ;
 	}
 	return (number);
 }
