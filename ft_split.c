@@ -6,37 +6,58 @@
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 20:13:45 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/11/01 15:55:01 by apaula-r         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:40:47 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(const char *str, char c)
+static int	ft_wrdcnt(const char *str, char c);
+
+char	**ft_split(const char *s, char c)
 {
 	unsigned int	i;
-	unsigned int	j;
+	unsigned int	start;
 	unsigned int	k;
 	char			**tab;
 
-	tab = (char **)malloc(sizeof(char *) * (ft_wrdcnt(str, c)) + 1);
-	if (!str || !tab)
+	if (!s)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_wrdcnt(s, c)) + 1);
+	if (!tab)
 		return (NULL);
 	i = 0;
 	k = 0;
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] == c)
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		j = i;
-		while (str[i] && str[i] != c)
+		start = i;
+		while (s[i] && s[i] != c)
 			i++;
-		if (i > j)
-		{
-			tab[k] = ft_strndup(str + j, i - j);
-			k++;
-		}
+		if (i > start)
+			tab[k++] = ft_substr(s, start, i - start);
 	}
 	tab[k] = NULL;
 	return (tab);
+}
+
+static int	ft_wrdcnt(const char *str, char c)
+{
+	unsigned int	i;
+	int				count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (str[i] == c && str[i])
+			i++;
+		if (str[i] == '\0')
+			return (count);
+		while (str[i] && (str[i] != c))
+			i++;
+		count++;
+	}
+	return (count);
 }
