@@ -5,7 +5,7 @@ This is a brief documentation with some explanations and questions that arised d
 
 FUNCTIONS
 
-- check if a parameter is alphanumeric
+- check if a parameter is alphanumeric:
 int		ft_isalnum(int c);
 
 - check if a parameter is alpha
