@@ -14,19 +14,24 @@ This is a brief documentation with some explanations and questions that arised d
 FUNCTIONS
 
 - check if a parameter is alphanumeric
-- int ft_isalnum(int c);
+
+int ft_isalnum(int c);
 
 - check if a parameter is alpha 
-- int ft_isalpha(int c);
+
+int ft_isalpha(int c);
 
 - check if a parameter is ascii
-- int ft_isascii(int c);
+
+int ft_isascii(int c);
 
 - check if a parameter is a digit 
-- int ft_isdigit(int c);
+
+int ft_isdigit(int c);
 
 - check if a parameter is printable 
-- int ft_isprint(int c);
+
+int ft_isprint(int c);
 
 QUESTIONS
 
