@@ -6,7 +6,7 @@
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:54:09 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/11/01 17:31:12 by apaula-r         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:39:52 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,16 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+/*
+*	@param c The character  be checked
+*	@return Boolean
+*/
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+
 char	*ft_memchr(const void *str, int c, size_t n);
 int		ft_memcmp(const void *str, const void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);

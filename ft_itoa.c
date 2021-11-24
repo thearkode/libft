@@ -6,7 +6,7 @@
 /*   By: apaula-r <apaula-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 18:48:34 by apaula-r          #+#    #+#             */
-/*   Updated: 2021/11/01 15:55:56 by apaula-r         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:38:54 by apaula-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ static int	countdigits(int n)
 /*
 int main(void)
 {
-	printf("%s\n", ft_itoa(-623));
+	printf("%s\n", ft_itoa(0));
 }
 */
